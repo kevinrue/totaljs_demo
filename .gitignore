@@ -1,3 +1,7 @@
+# Node.js
+node_modules
+tmp
+
 *.class
 
 # Mobile Tools for Java (J2ME)
