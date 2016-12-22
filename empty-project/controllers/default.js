@@ -5,8 +5,8 @@ exports.install = function() {
 	F.route('/class/', view_class)
 	F.route('/student/', view_student)
 	F.route('/services/{name}/', view_services);
-  F.route('/contact/', view_contact);
-  F.route('/contact/', json_contact, ['post']);
+	F.route('/contact/', view_contact);
+	F.route('/contact/', json_contact, ['post']);
 };
 
 // The action
