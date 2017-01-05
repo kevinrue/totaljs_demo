@@ -2,8 +2,8 @@ exports.install = function() {
 	F.route('/', view_index);
 	// or
 	// F.route('/');
-	F.route('/class/', view_class)
-	F.route('/student/', view_student)
+	F.route('/class/', view_class);
+	F.route('/students/', view_students);
 	F.route('/services/{name}/', view_services);
 	F.route('/contact/', view_contact);
 	F.route('/contact/', json_contact, ['post']);
@@ -41,7 +41,7 @@ function view_class() {
 					}
 
 					// Shows the result on a console window
-					console.log(rows);
+					//console.log(rows);
 
 					// Send rows as the model into the view
 					self.view('class', rows);
@@ -50,7 +50,7 @@ function view_class() {
 	});
 }
 
-function view_student() {
+function view_students() {
 	var self = this;
 
 	// definitions/mysql.js
@@ -74,10 +74,10 @@ function view_student() {
 					}
 
 					// Shows the result on a console window
-					console.log(rows);
+					//console.log(rows);
 
 					// Send rows as the model into the view
-					self.view('student', rows);
+					self.view('students', rows);
 			});
 
 	});
