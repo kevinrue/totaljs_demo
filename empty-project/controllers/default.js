@@ -38,7 +38,18 @@ function view_classes() {
 			}
 
 			// Table schema = { Id: String, Subject: String };
-			connection.query('SELECT * FROM class', function(err, rows) {
+			connection.query('\
+SELECT class,subject,count(student) AS students,AVG(age) AS age \
+FROM ( \
+	SELECT class,student,subject FROM class \
+		LEFT JOIN register \
+		ON class.id=register.class \
+	) AS t1 \
+LEFT JOIN student \
+ON t1.student=student.id \
+GROUP BY class,subject; \
+',
+				 function(err, rows) {
 
 					// Close connection
 					connection.release();

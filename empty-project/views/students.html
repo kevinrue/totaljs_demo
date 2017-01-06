@@ -1,13 +1,21 @@
-<div id="company" style="width:100px;background-color: #ff6a00">Below is a list of all students</div>
+<div id="company">Below is a list of all students</div>
+<br>
 
 <table width="100%" class="table" cellpadding="0" cellspacing="0" border="0">
-    @{foreach var m in model}
-    <tr>
-        <td><a href="student/@{m.id}">@{m.id}</a></td>
-        <td>@{m.firstname}</td>
-        <td>@{m.lastname}</td>
-        <td>@{m.age}</td>
-        <td>@{m.gender}</td>
-    </tr>
-    @{end}
+  <tr>
+      <th>Identifier</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Age</th>
+      <th>Gender</th>
+  </tr>
+  @{foreach var m in model}
+  <tr>
+      <td><a href="student/@{m.id}">@{m.id}</a></td>
+      <td>@{m.firstname}</td>
+      <td>@{m.lastname}</td>
+      <td>@{m.age}</td>
+      <td>@{m.gender}</td>
+  </tr>
+  @{end}
 </table>

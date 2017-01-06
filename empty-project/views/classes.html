@@ -1,10 +1,19 @@
-<div id="company" style="width:100px;background-color: #ff6a00">Below is a list of all classes</div>
+<div id="company">Below is a list of all classes</div>
+<br>
 
 <table width="100%" class="table" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <th>Identifier</th>
+        <th>Subject</th>
+        <th>Students</th>
+        <th>Mean age</th>
+    </tr>
     @{foreach var m in model}
     <tr>
-        <td><a href="class/@{m.id}">@{m.id}</a></td>
+        <td><a href="class/@{m.class}">@{m.class}</a></td>
         <td>@{m.subject}</td>
+        <td>@{m.students}</td>
+        <td>@{m.age}</td>
     </tr>
     @{end}
 </table>
